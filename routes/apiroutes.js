@@ -12,7 +12,9 @@ module.exports = function(app) {
     })
 
     app.get("/api/workouts/range", ({}, res) => {
-      db.Workout.find({}).then((dbWorkout) => {
+      db.Workout.aggregate( [ 
+        { $addFields: { totalDuration: { $sum: "$exercises.duration"}}}
+      ]).then((dbWorkout) => {
         res.json(dbWorkout);
       }).catch(err => {
         res.status(400).json(err);
@@ -29,8 +31,8 @@ module.exports = function(app) {
 
       app.put("/api/workouts/:id", (req, res) => {
         db.Workout.findByIdAndUpdate(
-          { _id: req.params.id }, { exercises: req.body }
-        ).then((dbWorkout) => {
+          req.params.id, { $push: {exercises: req.body }
+        }).then((dbWorkout) => {
           res.json(dbWorkout);
         }).catch(err => {
           res.status(400).json(err);
