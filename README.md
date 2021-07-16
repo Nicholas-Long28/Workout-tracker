@@ -2,8 +2,8 @@
 ## Description
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 - To use MongoDB to track and update workouts.
-- When you answer all prompts as desired you are returned with a staff of employees viewable on a html page. 
-- To create a series of tests to check that the requirements are met.
+- When you input what exercises/workouts you have done it logs duration and weight. 
+- To create a data set to log and track your fitness.
 - What did you learn?
 ## Table of Contents (Optional)
 If your README is long, add a table of contents to make it easy for users to find what they need.
@@ -12,13 +12,13 @@ If your README is long, add a table of contents to make it easy for users to fin
 - Credits
 - MIT License
 ## Installation
-There are no further steps to access the page. 
+You are going to want to do an npm install to acquire all of the required packeges needed to run this application. Then you will want to run and open Mongodb via mongod, and in a seperate terminal you will want to run node server.js to start the server and navigate to the set localhost to use the application.  
 ## Usage
 Provide instructions and examples for use. Include screenshots as needed.
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
     ```md
     <img></img>
-    ![Website Preview](./assets\Portfolio%20screenshot.png)
+    ![Website Preview](assets/fitness-tracker.png)
     ```
 ## Credits
 https://developer.mozilla.org/en-US/
